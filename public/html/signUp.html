@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="../css/style.css">
+    <title>Sign up</title>
+</head>
+<body>
+    <section class="signup">
+        <h1>Sign up</h1>
+        <form class="signupform" novalidate>
+            <label for="userNmae">UserName:
+                <input id="userName" type="text" required/>
+              </label>
+              <p id="userNmaeErr" class="error"></p>
+          <label for="email">Email:
+            <input id="email" type="email" required/>
+          </label>
+          <p id="emailErr" class="error"></p>
+          <label for="password">Password:
+            <input id="password" type="password" required pattern="[A-Za-z0-9]+" />
+          
+          </label>
+          <p id="passwordErr" class="error"></p>
+          <label for="confirmPassword">Confirm password:
+            <input id="confirmPassword" type="password" required/>
+          </label>
+          <p id="confirmErr" class="error"></p>
+          <button>Submit</button>
+        </form>
+      </section>
+      <script src="../js/signUp.js"></script>
+</body>
+</html>
