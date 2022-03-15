@@ -13,8 +13,6 @@ const displayErr=(errElem, errMsg)=> {
     errElem.innerText = errMsg;
   }
 
-  console.log(123454)
-
   const checkUserName = ()=> {
     if (userName.validity.typeMismatch) {
       displayErr(userNmaeErr, "Please enter a valid userNmae");
@@ -94,7 +92,6 @@ fetch('/signUp',{
   if (response.redirected) {
       window.location.href = response.url;
   }
-
   return response;
 })
 });

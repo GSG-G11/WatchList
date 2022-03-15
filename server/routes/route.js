@@ -1,19 +1,14 @@
 const router = require("express").Router();
-const {handleErrorNotFound, handleErrorServer} =require('../controllers/handleError');
-const signin = require('../controllers/handelSignin')
-router.post('/login' ,signin)
-
-
-
-const postSignUp = require("../controllers");
-
-
 const {
   handleErrorNotFound,
   handleErrorServer,
 } = require("../controllers/handleError");
+const signin = require("../controllers/handelSignin");
+
+const postSignUp = require("../controllers");
 
 router.post("/signUp", postSignUp);
+router.post("/login", signin);
 
 router.use(handleErrorNotFound);
 router.use(handleErrorServer);

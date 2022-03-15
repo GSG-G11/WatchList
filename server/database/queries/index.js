@@ -1,4 +1,7 @@
-const postSignUp = require('./postSignUp')
+const postSign = require('./postSignUp');
+const getUsers = require('./getAllUsers');
+const getUserByEmail = require('./getUserbyEmail')
 
 
-module.exports=postSignUp;
+module.exports={postSign,getUsers,getUserByEmail};
+

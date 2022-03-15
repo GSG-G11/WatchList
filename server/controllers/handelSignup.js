@@ -2,7 +2,7 @@ require('env2')('config.env');
  const Joi = require('joi');
  const jwt = require("jsonwebtoken");
  const bcrypt = require("bcryptjs");
-const postSign =require('../database/queries');
+const {postSign} =require('../database/queries');
 
 const postSignUp=(req,res)=>{
 const signupSchema = Joi.object({

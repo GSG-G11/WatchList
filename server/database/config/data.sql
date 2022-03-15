@@ -3,7 +3,7 @@ DROP TABLE IF EXISTS users,list CASCADE;
 CREATE TABLE users (
   id  serial  PRIMARY KEY,
   userName  varchar(100)  NOT NULL,
-  email  varchar(100)  NOT NULL,
+  email  varchar(100) UNIQUE NOT NULL,
   password  varchar(100)  NOT NULL
 );
 CREATE TABLE list (
@@ -14,7 +14,7 @@ CREATE TABLE list (
   user_id integer   REFERENCES users(id) ON UPDATE CASCADE
 );
 
-INSERT INTO users (userName,email,password) VALUES ('Braa' , 'braa@hotmail.com','as123456');
-INSERT INTO list (name,episodes,type,user_id) VALUES ('moveName',5,'movie',1);
+-- INSERT INTO users (userName,email,password) VALUES ('Braa' , 'braa@hotmail.com','as123456');
+-- INSERT INTO list (name,episodes,type,user_id) VALUES ('moveName',5,'movie',1);
 
 COMMIT;
