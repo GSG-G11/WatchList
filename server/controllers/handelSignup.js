@@ -1,7 +1,10 @@
 
  const Joi = require('joi');
+ const jwt = require("jsonwebtoken");
+ const bcrypt = require("bcryptjs");
+const postSign =require('../database/queries');
+
 const postSignUp=(req,res)=>{
-    // console.log(req.body);
 const signupSchema = Joi.object({
   username: Joi.string().alphanum().min(3).max(30)
     .required(),
@@ -12,12 +15,11 @@ const signupSchema = Joi.object({
   password: Joi.string().pattern(new RegExp('^[a-zA-Z0-9]{3,30}$')).required(),
   confirmPassword: Joi.ref('password')
 });
-
+const {username,email}=req.body
 try {
     signupSchema.validateAsync(req.body)
-  .then(data=>console.log(data))
-  .catch(err=>console.log(err));
-
+  .then(data=> bcrypt.hash(data.password, 8))
+  .then(hashPassword=>postSign(username,email,hashPassword))
 }
 catch (err) {
   console.log(err);
