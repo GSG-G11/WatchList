@@ -4,15 +4,25 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Document</title>
+    <script src="https://unpkg.com/sweetalert/dist/sweetalert.min.js"></script>
+    <link rel="stylesheet" href="../css/style.css">
+    <title>Sign in</title>
 </head>
 <body>
-    <form>
-        <input class="text" id="email" type="email" name="email" placeholder="Email" required>
-        <input class="text" id="password" type="password" name="password" placeholder="Password" min="6" required >
-        <input type="submit" id="login" value="LOGIN">
-        <P id='message'></P>
-      </form>
+    <section class="signup">
+        <h1>Sign in</h1>
+        <form class="signupform" >
+          <label for="email">Email:
+            <input id="email" type="email" required/>
+          </label>
+          <p id="emailErr" class="error"></p>
+          <label for="password">Password:
+            <input id="password" type="password" required pattern="[A-Za-z0-9]+" />
+          </label>
+          <p id="passwordErr" class="error"></p>
+          <button>Submit</button>
+        </form>
+      </section>
       <script src="../js/login.js"></script>
 </body>
 </html>

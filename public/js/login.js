@@ -1,29 +1,70 @@
-const message = document.getElementById('message');
-const loginButton = document.getElementById('login');
 
-loginButton.addEventListener('click', (e) => {
-  e.preventDefault();
-  message.textContent = '';
+var email = document.getElementById("email");
+var password = document.getElementById("password");
+var form = document.getElementsByTagName("form")[0];
+var emailErr = document.getElementById("emailErr");
+var passwordErr = document.getElementById("passwordErr");
 
-  const email = document.getElementById('email').value;
-  const password = document.getElementById('password').value;
-  if (!email.includes('.com') || !email.includes('@')) {
-    return (message.textContent = 'you should enter right email');
+
+const displayErr=(errElem, errMsg)=> {
+    errElem.innerText = errMsg;
   }
-  if (password.length < 8) {
-    return (message.textContent = 'you should enter right password');
+
+const checkEmail = ()=> {
+  if (email.validity.typeMismatch) {
+    displayErr(emailErr, "Please enter a valid email address");
+  } else if (email.validity.valueMissing) {
+    displayErr(emailErr, "Please enter an email address");
+  } else {
+    displayErr(emailErr, "");
+    return true;
   }
-  fetch('/login', {
-    method: 'POST',
-    headers: {
-      'Content-Type': 'application/json; charset=utf-8',
-    },
-    body: JSON.stringify({
-      email,
-      password,
-    }),
+};
+
+const checkPw = ()=> {
+  if (password.validity.patternMismatch) {
+    displayErr(
+      passwordErr,
+      "Password must contain at least eight characters, including one letter and one number"
+    );
+  } else if (password.validity.valueMissing) {
+    displayErr(passwordErr, "Please enter a password");
+  } else {
+    displayErr(passwordErr, "");
+    return true;
+  }
+};
+
+
+email.addEventListener("focusout", checkEmail);
+password.addEventListener("focusout", checkPw);
+
+
+form.addEventListener("submit", (event)=> {
+    
+  if (!checkEmail()) {
+    event.preventDefault();
+  }
+  if (!checkPw()) {
+    event.preventDefault();
+  }
+  
+event.preventDefault();
+fetch('/login',{
+  method:'POST',
+  headers:{ "Content-Type": 'application/json'},
+  redirect: 'follow' ,
+  body: JSON.stringify({
+    email:email.value,
+    password:password.value
   })
-    .then((data) => data.json())
-    .then((res) => console.log(res))
-    .catch((err) => console.log(err));
+}).then(res=> res.json())
+.then(console.log)
+// .then((response) => {
+//   if (response.redirected) {
+//       window.location.href = response.url;
+//   }
+//   return response;
+// }
+// )
 });
