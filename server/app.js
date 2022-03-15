@@ -12,5 +12,8 @@ app.use(express.static(path.join(__dirname, '..', 'public')));
 app.get('/signup', (req, res) => {
     res.sendFile(path.join(__dirname, '..', 'public', 'html','signUp.html'));
   });
+app.get('/login', (req, res) => {
+  res.sendFile(path.join(__dirname, '..', 'public', 'html','login.html'));
+});
 app.use(router)
 module.exports = app;
