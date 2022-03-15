@@ -1,4 +1,4 @@
-
+require('env2')('config.env');
  const Joi = require('joi');
  const jwt = require("jsonwebtoken");
  const bcrypt = require("bcryptjs");
@@ -20,6 +20,15 @@ try {
     signupSchema.validateAsync(req.body)
   .then(data=> bcrypt.hash(data.password, 8))
   .then(hashPassword=>postSign(username,email,hashPassword))
+  .then(data=>{
+    jwt.sign({id:data.rows[0].id}, process.env.privateKey, (err, token)=> {
+        if(err){
+            console.log(err)    
+        }else{
+          res.cookie('id',token).redirect('/');
+        }
+      });
+  })
 }
 catch (err) {
   console.log(err);

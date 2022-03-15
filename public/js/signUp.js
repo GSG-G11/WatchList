@@ -83,11 +83,21 @@ event.preventDefault();
 fetch('/signUp',{
   method:'POST',
   headers:{ "Content-Type": 'application/json'},
+  redirect: 'follow' ,
   body: JSON.stringify({
     username:userName.value,
     email:email.value,
     password:password.value,
     confirmPassword:confirmPassword.value
   })
+}).then((response) => {
+  if (response.redirected) {
+      window.location.href = response.url;
+  }
+
+  return response;
 })
 });
+
+
+
