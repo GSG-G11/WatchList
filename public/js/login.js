@@ -59,7 +59,9 @@ fetch('/login',{
     password:password.value
   })
 }).then(res=> res.json())
-.then(console.log)
+.then(data=>{
+  swal('error',data.message,'error')
+})
 // .then((response) => {
 //   if (response.redirected) {
 //       window.location.href = response.url;

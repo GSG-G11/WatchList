@@ -11,11 +11,15 @@ const signin =(req,res)=>{
     .then(data=> 
         {
         if(!data.rows.length){
-    res.json('user not found')
+    res.json({
+        message:'user not found'
+    })
     }else{
         bcrypt.compare(password, data.rows[0].password).then(data => {
            if(data === false){
-            res.json('password error')
+            res.json({
+                message:'password error'
+            })
            }else{
             res.json('welcome')
            }
