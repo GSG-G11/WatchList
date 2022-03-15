@@ -2,7 +2,9 @@ const express = require('express');
 const path = require('path');
 const compression = require('compression');
 const router = require('./routes/route')
+const cookieParser =require('cookie-parser');
 const app = express();
+app.use(cookieParser());
 app.use(compression());
 app.disable('x-powered-by');
 app.use(express.json());
