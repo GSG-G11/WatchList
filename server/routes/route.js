@@ -1,19 +1,14 @@
-const router = require('express').Router();
+const router = require("express").Router();
+const postSignUp = require("../controllers");
 
-const {handleErrorNotFound, handleErrorServer} =require('../controllers/handleError');
+const {
+  handleErrorNotFound,
+  handleErrorServer,
+} = require("../controllers/handleError");
 
-
-router.post('/signUp' ,(req,res)=>{
-    console.log(req.body);
-})
-
-
-
-
-
-
+router.post("/signUp", postSignUp);
 
 router.use(handleErrorNotFound);
 router.use(handleErrorServer);
 
-module.exports= router;
+module.exports = router;

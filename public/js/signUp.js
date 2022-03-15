@@ -86,7 +86,7 @@ fetch('/signUp',{
   body: JSON.stringify({
     username:userName.value,
     email:email.value,
-    passwor:password.value,
+    password:password.value,
     confirmPassword:confirmPassword.value
   })
 })
