@@ -58,13 +58,13 @@ fetch('/login',{
     email:email.value,
     password:password.value
   })
-}).then(res=> res.json())
-.then(console.log)
-// .then((response) => {
-//   if (response.redirected) {
-//       window.location.href = response.url;
-//   }
-//   return response;
-// }
-// )
+})
+
+.then((response) => {
+  if (response.redirected) {
+      window.location.href = response.url;
+  }
+  return response;
+})
+
 });
