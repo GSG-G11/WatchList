@@ -19,7 +19,6 @@ const signin =(req,res)=>{
            }else{
             res.json('welcome')
            }
-        
         });
     }
 }
