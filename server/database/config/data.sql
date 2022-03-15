@@ -1,0 +1,20 @@
+BEGIN;
+DROP TABLE IF EXISTS users,list CASCADE;
+CREATE TABLE users (
+  id  serial  PRIMARY KEY,
+  userName  varchar(100)  NOT NULL,
+  email  varchar(100)  NOT NULL,
+  password  varchar(100)  NOT NULL
+);
+CREATE TABLE list (
+  id  serial  PRIMARY KEY,
+  name  varchar(100)  NOT NULL,
+  episodes integer,
+  type  varchar(100) ,
+  user_id integer   REFERENCES users(id) ON UPDATE CASCADE
+);
+
+INSERT INTO users (userName,email,password) VALUES ('Braa' , 'braa@hotmail.com','as123456');
+INSERT INTO list (name,episodes,type,user_id) VALUES ('moveName',5,'movie',1);
+
+COMMIT;
