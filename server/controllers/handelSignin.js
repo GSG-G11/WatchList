@@ -4,7 +4,6 @@ const { getUsers, getUserByEmail } = require('../database/queries');
 const jwt = require('jsonwebtoken');
 
 const signin = (req, res) => {
-
     const { password } = req.body;
     schema
       .validateAsync(req.body)

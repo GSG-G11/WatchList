@@ -58,6 +58,11 @@ fetch('/login',{
     email:email.value,
     password:password.value
   })
+
+}).then(res=> res.json())
+.then(data=>{
+  swal('error',data.message,'error')
+})
 })
 
 .then((response) => {
@@ -66,5 +71,6 @@ fetch('/login',{
   }
   return response;
 })
+
 
 });
