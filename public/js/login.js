@@ -58,19 +58,18 @@ fetch('/login',{
     email:email.value,
     password:password.value
   })
-
-}).then(res=> res.json())
-.then(data=>{
-  swal('error',data.message,'error')
 })
-})
-
 .then((response) => {
   if (response.redirected) {
       window.location.href = response.url;
   }
   return response;
 })
+// .then(response=> console.log(response))
+// .then(data=>{
+//   swal('error',data.message,'error')
+// })
+})
 
 
-});
+
