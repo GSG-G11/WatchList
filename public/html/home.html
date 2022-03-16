@@ -14,9 +14,8 @@
             <a class="logo" href="#">WatchList</a>
 
             <div class="btnlk">
-
-                <a href="/logout"><button>Logout</button></a>
-                
+                <p class="username">Welcome <span>username</span> </p>
+                <button id="logout" >Logout</button></a>
             </div>
         </div>
     </nav>
@@ -26,14 +25,13 @@
         <div class="form">
             <form action="/addpost" class="wrap" id="add-book-form" method="post">
                 <!-- Search Input -->
-                <input type="text" class="searchInput" id="searchInput1" name="title" placeholder="Add Name" required />
-                <input type="text" class="searchInput" id="searchInput2" name="content" placeholder="Add Episodes" required/>
-                <input type="text" class="searchInput" id="searchInput3" name="userName" placeholder="Add Type" required/>
-                <input type="text" class="searchInput" id="searchInput4" name="cover" placeholder="Add Cover URL" required/>
-                <input  id="searchBtn" value="add" />
-                <button type="button" id="addBtn">Add To The List</button></a>
-
-</form></div>
+                <input type="text" class="searchInput" id="searchInput1" name="name" placeholder="Add Name" required />
+                <input type="text" class="searchInput" id="searchInput2" name="episodes" placeholder="Add Episodes" required/>
+                <input type="text" class="searchInput" id="searchInput3" name="type" placeholder="Add Type" required/>
+                <input type="url" class="searchInput" id="searchInput4" name="cover_url" placeholder="Add Cover URL" required/>
+                <button type="button" id="searchBtn">Add To The List</button></a>
+</form>
+</div>
             </div>
             <div class="table-container">
                 <table id="movie-table">
@@ -55,7 +53,7 @@
                 </table>
             </div>
       
-    <script src="../js/index.js"></script>
+    <script src="../js/home.js"></script>
 
 </body>
 </html>

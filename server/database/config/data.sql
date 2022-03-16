@@ -15,6 +15,4 @@ CREATE TABLE list (
   user_id integer   REFERENCES users(id) ON UPDATE CASCADE
 );
 
-
-
 COMMIT;
