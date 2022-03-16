@@ -1,16 +1,14 @@
-
 var email = document.getElementById("email");
 var password = document.getElementById("password");
 var form = document.getElementsByTagName("form")[0];
 var emailErr = document.getElementById("emailErr");
 var passwordErr = document.getElementById("passwordErr");
 
+const displayErr = (errElem, errMsg) => {
+  errElem.innerText = errMsg;
+};
 
-const displayErr=(errElem, errMsg)=> {
-    errElem.innerText = errMsg;
-  }
-
-const checkEmail = ()=> {
+const checkEmail = () => {
   if (email.validity.typeMismatch) {
     displayErr(emailErr, "Please enter a valid email address");
   } else if (email.validity.valueMissing) {
@@ -21,7 +19,7 @@ const checkEmail = ()=> {
   }
 };
 
-const checkPw = ()=> {
+const checkPw = () => {
   if (password.validity.patternMismatch) {
     displayErr(
       passwordErr,
@@ -35,41 +33,34 @@ const checkPw = ()=> {
   }
 };
 
-
 email.addEventListener("focusout", checkEmail);
 password.addEventListener("focusout", checkPw);
 
-
-form.addEventListener("submit", (event)=> {
-    
+form.addEventListener("submit", (event) => {
   if (!checkEmail()) {
     event.preventDefault();
   }
   if (!checkPw()) {
     event.preventDefault();
   }
-  
-event.preventDefault();
-fetch('/login',{
-  method:'POST',
-  headers:{ "Content-Type": 'application/json'},
-  redirect: 'follow' ,
-  body: JSON.stringify({
-    email:email.value,
-    password:password.value
-  })
-})
-.then((response) => {
-  if (response.redirected) {
+
+  event.preventDefault();
+  fetch("/login", {
+    method: "POST",
+    headers: { "Content-Type": "application/json" },
+    redirect: "follow",
+    body: JSON.stringify({
+      email: email.value,
+      password: password.value,
+    }),
+  }).then((response) => {
+    if (response.redirected) {
       window.location.href = response.url;
-  }
-  return response;
-})
-// .then(response=> console.log(response))
-// .then(data=>{
-//   swal('error',data.message,'error')
-// })
-})
-
-
-
+    }
+    return response;
+  });
+  // .then(response=> console.log(response))
+  // .then(data=>{
+  //   swal('error',data.message,'error')
+  // })
+});

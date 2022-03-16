@@ -154,15 +154,12 @@ img {
 
 @media (max-width: 992px) {
   .header .main-navgation {
-    position: absolute;
     top: 150%;
     left: 50%;
     transform: translateX(-50%);
     width: 70%;
     height: 0;
     z-index: 999;
-    overflow: hidden;
-    flex-direction: column;
     align-items: center;
     padding: 0 33.33333px;
     border-radius: 10px;
