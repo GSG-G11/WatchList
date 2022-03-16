@@ -1,17 +1,9 @@
 fetch("/list").then(response => response.json())
 .then((data) =>{
-    const btnlk = document.querySelector('.btnlk');
-
-    const usernameWelc = document.createElement('p');
-    usernameWelc.className = 'username';
-    usernameWelc.textContent = "Welcome ";
-
+    const btnlk = document.querySelector('.username');
     const username = document.createElement('span');
     username.textContent = data[0].username;
-   
-
-    btnlk.appendChild(usernameWelc)
-    usernameWelc.appendChild(username)
+    btnlk.appendChild(username)
 
     const movieTable = document.querySelector('#movie-table');
     data.forEach(e=>{
@@ -25,6 +17,8 @@ fetch("/list").then(response => response.json())
         type.textContent = e.type;
 
         const cover = document.createElement('img');
+        cover.className='img';
+
         cover.src = e.cover_url;
 
         const episodes = document.createElement('td');
