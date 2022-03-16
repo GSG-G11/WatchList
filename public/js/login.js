@@ -58,9 +58,9 @@ form.addEventListener("submit", (event) => {
       window.location.href = response.url;
     }
     return response;
-  });
-  // .then(response=> console.log(response))
-  // .then(data=>{
-  //   swal('error',data.message,'error')
-  // })
+  })
+  .then(response=> response.json())
+  .then(data=>{
+    swal('error',data,'error')
+  })
 });
