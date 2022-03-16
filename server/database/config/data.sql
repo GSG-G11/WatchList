@@ -11,6 +11,7 @@ CREATE TABLE list (
   name  varchar(100)  NOT NULL,
   episodes integer,
   type  varchar(100) ,
+  cover_url varchar(100) NOT NULL, 
   user_id integer   REFERENCES users(id) ON UPDATE CASCADE
 );
 
