@@ -1,3 +1,4 @@
+/* eslint-disable no-undef */
 const name1 = document.getElementById("searchInput1");
 const episodes = document.getElementById("searchInput2");
 const type = document.getElementById("searchInput3");

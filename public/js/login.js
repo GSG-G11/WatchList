@@ -1,3 +1,4 @@
+/* eslint-disable no-undef */
 const email = document.getElementById("email");
 const password = document.getElementById("password");
 const form = document.getElementsByTagName("form")[0];
@@ -61,6 +62,6 @@ form.addEventListener("submit", (event) => {
   })
   .then(response=> response.json())
   .then(data=>{
-    swal('error',data,'error')
+    swal('ERROR!',data,'error')
   })
 });
