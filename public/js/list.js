@@ -1,3 +1,4 @@
+/* eslint-disable no-undef */
 const deleteFunction = (id)=> fetch(`/delete/${id}`,{
     method:'DELETE',
     headers:{ 'Content-Type': 'application/json'},

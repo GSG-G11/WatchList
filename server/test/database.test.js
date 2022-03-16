@@ -1,3 +1,4 @@
+/* eslint-disable no-undef */
 const connection = require('../database/config/connection');
 const dbBuild =require('../database/config/build');
 

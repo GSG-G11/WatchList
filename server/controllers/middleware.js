@@ -1,3 +1,4 @@
+/* eslint-disable no-unused-vars */
 const jwt = require("jsonwebtoken");
 
 const isAuthProtected = (req, res, next) => {

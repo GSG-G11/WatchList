@@ -1,7 +1,5 @@
+const logout = (req, res) => {
+  res.clearCookie("id").redirect("/");
+};
 
-
-const logout= (req,res)=>{
-    res.clearCookie('id').redirect('/');
-}
-
-module.exports=logout;
+module.exports = logout;

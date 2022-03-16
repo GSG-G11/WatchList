@@ -27,8 +27,7 @@ router.get("/login", isUserLogined, (req, res) => {
   );
 });
 router.get("/home", isAuthProtected, (req, res) => {
-  res.sendFile(
-    path.join(__dirname, "..", "..", "public", "html", "home.html"));
+  res.sendFile(path.join(__dirname, "..", "..", "public", "html", "home.html"));
 });
 
 router.post("/addtolist", isAuthProtected, addListController);
