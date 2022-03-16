@@ -1,3 +1,9 @@
+const deleteFunction = (id)=> fetch(`/delete/${id}`,{
+    method:'DELETE',
+    headers:{ 'Content-Type': 'application/json'},
+    redirect: 'follow',
+})
+
 fetch("/list").then(response => response.json())
 .then((data) =>{
     const btnlk = document.querySelector('.username');
@@ -27,6 +33,10 @@ fetch("/list").then(response => response.json())
         const btn = document.createElement('button');
         btn.className='Delete';
         btn.textContent='Delete';
+        btn.onclick=()=>{
+        deleteFunction(e.id)
+        window.location.assign('/home')
+        }
 
         movie.appendChild(name)
         movie.appendChild(type)

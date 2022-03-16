@@ -6,7 +6,7 @@ const {
 } = require("../controllers/handleError");
 const isAuthProtected = require('../controllers/middleware');
 
-const {postSignUp,addListController,logout,signin,getUserData} = require("../controllers");
+const {postSignUp,addListController,logout,signin,getUserData,deleteListController} = require("../controllers");
 
 router.post("/signUp", postSignUp);
 router.post("/login", signin);
@@ -16,8 +16,8 @@ router.get('/home',isAuthProtected,(req, res) => {
 
 router.post('/addtolist',isAuthProtected,addListController);
 router.get("/list",getUserData);
-router.get('/logout',logout)
-
+router.get('/logout',logout);
+router.delete('/delete/:id',deleteListController)
 router.use(handleErrorNotFound);
 router.use(handleErrorServer);
 
