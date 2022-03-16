@@ -5,10 +5,11 @@ const {
 } = require("../controllers/handleError");
 const signin = require("../controllers/handelSignin");
 
-const postSignUp = require("../controllers");
+const {postSignUp,getUserData} = require("../controllers");
 
 router.post("/signUp", postSignUp);
 router.post("/login", signin);
+router.get("/list",getUserData);
 
 router.use(handleErrorNotFound);
 router.use(handleErrorServer);
