@@ -5,14 +5,14 @@ const deleteFunction = (id)=> fetch(`/delete/${id}`,{
 })
 
 fetch("/list").then(response => response.json())
-.then((data) =>{
+.then(([user,list ])=>{ 
     const btnlk = document.querySelector('.username');
     const username = document.createElement('span');
-    username.textContent = data[0].username;
+    username.textContent = user[0].username;
     btnlk.appendChild(username)
 
     const movieTable = document.querySelector('#movie-table');
-    data.forEach(e=>{
+    list.forEach(e=>{
         const movie = document.createElement('tr');
         movie.id = e.id;
 
