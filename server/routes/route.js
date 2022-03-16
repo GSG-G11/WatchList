@@ -6,7 +6,7 @@ const {
 } = require("../controllers/handleError");
 const isAuthProtected = require('../controllers/middleware');
 
-const {postSignUp,addListController,logout,signin} = require("../controllers");
+const {postSignUp,addListController,logout,signin,getUserData} = require("../controllers");
 
 router.post("/signUp", postSignUp);
 router.post("/login", signin);
