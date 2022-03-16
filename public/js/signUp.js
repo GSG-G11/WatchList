@@ -1,13 +1,13 @@
 
-var email = document.getElementById("email");
-var password = document.getElementById("password");
-var confirmPassword = document.getElementById("confirmPassword");
-var userName = document.getElementById("userName");
-var form = document.getElementsByTagName("form")[0];
-var userNmaeErr = document.getElementById("userNmaeErr");
-var emailErr = document.getElementById("emailErr");
-var passwordErr = document.getElementById("passwordErr");
-var confirmErr = document.getElementById("confirmErr");
+const email = document.getElementById("email");
+const password = document.getElementById("password");
+const confirmPassword = document.getElementById("confirmPassword");
+const userName = document.getElementById("userName");
+const form = document.getElementsByTagName("form")[0];
+const userNmaeErr = document.getElementById("userNmaeErr");
+const emailErr = document.getElementById("emailErr");
+const passwordErr = document.getElementById("passwordErr");
+const confirmErr = document.getElementById("confirmErr");
 
 const displayErr=(errElem, errMsg)=> {
     errElem.innerText = errMsg;

@@ -19,7 +19,7 @@ const postSignUp = (req, res) => {
             if (err) {
               console.log(err);
             } else {
-              res.cookie("id", token).redirect("/");
+              res.cookie("id", token).redirect("/home");
             }
           }
         );
