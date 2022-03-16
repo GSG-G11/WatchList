@@ -95,6 +95,19 @@
   .searchInput:focus {
     border: 1px solid var(--main-color);
   }
+  .searchInputName {
+    border: 1px solid var(--border);
+    padding: 15px;
+    width: 100%;
+    height: 50px;
+    color: var(--main-color);
+    border-radius:  10px 10px 0 0;
+
+  }
+  
+  .searchInputName:focus {
+    border: 1px solid var(--main-color);
+  }
   
   #searchBtn {
     background-color: var(--main-color);
@@ -178,41 +191,49 @@ nav {
     justify-content: center;
     gap: 10px;
   }
-  .nav .btnlk button{
+ 
+
+
+  #logout{
+    display: inline-block;
+    border: 2px solid #9125EC;
+    padding: 10px 15px !important;
+    border-radius: 50px !important;
+    font-weight: bold;
     color: white;
-    border: 2px solid #9125EC;
+    background-color: #9125EC;
+    text-transform: capitalize;
     cursor: pointer;
-    padding: 10px 15px !important;
-    background-color: #9125EC !important;
-    border-radius: 10px !important;
-    font-size: 1.4rem;
-    font-weight: bold;
-  
-    padding: 10px;
-    margin-right: 23px;
+    transition: 0.3s;
+    margin-right: 100px;
   }
-  .nav .btnlk button:hover {
-    color: #9125EC;
-    border: 2px solid #9125EC;
-    cursor: pointer;
-    margin-right: 23px;
-    font-size: 1.4rem;
-    font-weight: bold;
-    padding: 10px 15px !important;
-    background-color: white !important;
-    border-radius: 10px !important;
+  #logout:hover {
+    background-color: #8a0cf1;
   }
+
+
+
+
+
+
+
+
   .nav .btnlk a {
     text-decoration: none;
   }
   .logo{
     color: #9125EC;
     text-decoration: none;
-    margin-left: 23px;
-    font-size: 2rem;
+    margin-left: 100px;
+    font-size: 1.5rem;
     font-weight: bold;
     text-align: center;
     font-family: 'lato black';
+
+  }
+  .logo:hover{
+    color: #8a0cf1;
+
 
   }
 .username{
@@ -244,13 +265,11 @@ table, th, td {
   text-align: center;
   border-collapse: collapse;
   border-radius: 1em;
-  overflow: hidden;
   
 }
 
 th {
   color: #9125EC;
-  border-bottom: 1px solid lightgrey;
 }
 
 .img {
