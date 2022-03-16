@@ -1,5 +1,4 @@
-fetch("/list")
-.then(response => console.log(response))
-// .then((data) =>{
-//     console.log(data);
-// })
+fetch("/list").then(response => response.json())
+.then((data) =>{
+    console.log(data);
+})
