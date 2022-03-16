@@ -11,13 +11,11 @@ const {postSignUp,addListController,logout,signin,getUserData} = require("../con
 router.post("/signUp", postSignUp);
 router.post("/login", signin);
 
-router.get("/list",getUserData);
-
-
 router.get('/home',isAuthProtected,(req, res) => {
   res.sendFile(path.join(__dirname, '..','..', 'public', 'html','home.html'))});
 
 router.post('/addtolist',isAuthProtected,addListController);
+router.get("/list",getUserData);
 router.get('/logout',logout)
 
 router.use(handleErrorNotFound);

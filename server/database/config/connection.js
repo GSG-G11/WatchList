@@ -10,7 +10,6 @@ if (process.env.NODE_ENV === 'test') {
 } else {
   DATABASE_URL = process.env.DB_URL;
 }
-
 if (!DATABASE_URL) {
   throw new Error('database not found');
 }
