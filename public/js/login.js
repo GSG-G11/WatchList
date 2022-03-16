@@ -1,8 +1,8 @@
-var email = document.getElementById("email");
-var password = document.getElementById("password");
-var form = document.getElementsByTagName("form")[0];
-var emailErr = document.getElementById("emailErr");
-var passwordErr = document.getElementById("passwordErr");
+const email = document.getElementById("email");
+const password = document.getElementById("password");
+const form = document.getElementsByTagName("form")[0];
+const emailErr = document.getElementById("emailErr");
+const passwordErr = document.getElementById("passwordErr");
 
 const displayErr = (errElem, errMsg) => {
   errElem.innerText = errMsg;

@@ -18,6 +18,7 @@ app.get('/signup', (req, res) => {
 app.get('/login', (req, res) => {
   res.sendFile(path.join(__dirname, '..', 'public', 'html','login.html'));
 });
+
 app.use(router);
-app.use(isAuthProtected)
+
 module.exports = app;
