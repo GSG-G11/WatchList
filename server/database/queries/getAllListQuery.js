@@ -1,4 +1,4 @@
-const { text } = require('express');
+
 const connection = require('../config/connection');
 
 const listQuery = ()=>{
