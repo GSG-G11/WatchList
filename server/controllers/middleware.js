@@ -12,10 +12,25 @@ const isAuthProtected = (req, res, next) => {
           next();
         }
       });
-    } else {
+    }
+    else {
       res.redirect('/');
     }
   };
 
+  const isUserLogined = (req, res, next) => {
+    const { id } = req.cookies;
+    if (id) {
+      jwt.verify(id, process.env.privateKey, (err, id) => {
+        if (err) {
+          next()
+        }else{
+          res.redirect('/home');
+        }
+      });
+    }else{
+      next()
+    }
+  };
 
-  module.exports=isAuthProtected;
+  module.exports = {isAuthProtected, isUserLogined};
