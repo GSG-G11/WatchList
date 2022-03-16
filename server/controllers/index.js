@@ -1,4 +1,4 @@
 const postSignUp = require('./handelSignup');
+const getUserData = require('./handlerGetUserData')
 
-
-module.exports=postSignUp;
+module.exports={postSignUp, getUserData};
