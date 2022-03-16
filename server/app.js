@@ -1,9 +1,10 @@
 const express = require('express');
+const app = express();
 const path = require('path');
 const compression = require('compression');
-const router = require('./routes/route')
+const router = require('./routes/route');
 const cookieParser =require('cookie-parser');
-const app = express();
+const isAuthProtected = require('./controllers/middleware');
 app.use(cookieParser());
 app.use(compression());
 app.disable('x-powered-by');
@@ -17,5 +18,6 @@ app.get('/signup', (req, res) => {
 app.get('/login', (req, res) => {
   res.sendFile(path.join(__dirname, '..', 'public', 'html','login.html'));
 });
-app.use(router)
+app.use(router);
+app.use(isAuthProtected)
 module.exports = app;

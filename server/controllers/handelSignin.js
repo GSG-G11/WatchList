@@ -16,7 +16,7 @@ const signin = (req, res) => {
             if (value === false) {
               res.json('password error');
             } else {
-              console.log(data);
+             
               jwt.sign({id:data.rows[0].id}, process.env.privateKey, (err, token)=> {
                   if(err){
                       console.log(err)
