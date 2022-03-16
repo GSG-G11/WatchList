@@ -41,6 +41,6 @@ fetch("/list").then(response => response.json())
         movie.appendChild(btn)
 
         movieTable.appendChild(movie)
-    })
 
+})
 })

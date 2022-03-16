@@ -16,7 +16,7 @@ CREATE TABLE list (
 );
 
 
-
+INSERT INTO users (userName,email,password) VALUES ('braa','braa32@hotmail.com','a123456');
 INSERT INTO list (name,episodes,type,cover_url,user_id) VALUES ('name1',5,'type1','cover_url1',1);
 
 

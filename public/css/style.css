@@ -1,37 +1,56 @@
+
 * {
-    font-family: "Lato", sans-serif;
-    font-weight: 300;
+    margin: 0;
+    padding: 0;
     box-sizing: border-box;
+    font-family: Verdana, Geneva, sans-serif;
   }
+body{
   
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 100vh;
+}
+
   .signup {
-    width: 300px;
-    height: 530px;
+    width: 500px;
+    height: 620px;
     margin: 1em auto;
     padding: 1em 1em 0;
     background: rgb(243, 243, 243);
-    border-radius: 5px;
+    border-radius: 25px;
+  }
+  .doyou{
+    text-align: center;
+  }
+  a {
+    text-decoration: none;
   }
   
   .signup h1 {
     width: 70%;
     margin: 1.5em auto;
     display: block;
+    color: #9125EC;
+
   }
-  
+
   .signupform {
     font-size: 14px;
+    justify-content: center;
+
   }
   
   .signupform label {
     width: 70%;
     display: block;
-    margin: 1em auto 0.5em;
+    margin: auto;
   }
   
   .signupform input {
     width: 100%;
-    height: 30px;
+    height: 40px;
     display: block;
     margin: 1em auto 0;
     padding: 0.5em;
@@ -43,13 +62,13 @@
   
   .signupform button {
     width: 70%;
-    height: 30px;
+    height: 40px;
     display: block;
     margin: 2em auto;
     outline: none;
     border: none;
     border-radius: 5px;
-    background-color: rgb(36, 36, 36);
+    background-color: #9125EC;
     font-size: 10px;
     color: white;
     text-transform: uppercase;
@@ -63,4 +82,7 @@
     color: red;
     text-transform: uppercase;
   }
+  
+
+
   
